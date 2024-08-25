@@ -1,3 +1,38 @@
+%{
+_______________________________________________________________________
+
+***********************************************************************
+**************         3D Printing Research Group        **************
+***********************************************************************
+************            Principal Invetigator (PI):        ************
+*********               >>>   Dr. Yiwei Weng   <<<            *********
+***********************************************************************
+***               The Hong Kong Polytechnic University             ****
+***              Department of Building and Real Estate            ****
+***                         Hong Kong (PRC)                        ****
+***********************************************************************
+*---------------------------------------------------------------------*
+*                 Lab Website: wengyiwei.github.io                    *
+*---------------------------------------------------------------------*
+*                                                                     *
+***********************************************************************
+****                  Class for the REAL IRB2600                   ****
+***********************************************************************
+*---------------------------------------------------------------------*
+*                   Start date:    July 23 2024                       *
+*                   Last update:   July 29 2024                       *
+*---------------------------------------------------------------------*
+*                                                                     *
+***********************************************************************
+_______________________________________________________________________
+
+                                                          Copyright (C)
+                                                           2024-present
+                                                            by LIU Tong
+                                                              Hong Kong
+                                             People's Republic of China
+_______________________________________________________________________
+%}
 classdef IRB2600Real
   %IRB2600REAL Summary of this class goes here
   %   Detailed explanation goes here
@@ -52,7 +87,7 @@ classdef IRB2600Real
       %           q3 = sqrt(Rori(2,2)  - Rori(1,1) - Rori(3,3) +1 ) /2 * sq3 ;
       %           sq4 = sign(Rori(2,1) - Rori(1,2) ) ;
       %           q4 = sqrt(Rori(3,3)  - Rori(1,1) - Rori(2,2) +1 ) /2 * sq4 ;
-      %  % to generate ËÄÔªÊý (Si4Yuan2Shu\ to representate the orientation parameter)
+      %  % to generate å››å…ƒæ•° (Si4Yuan2Shu\ to representate the orientation parameter)
       %           Q1234 = [q1,q2,q3,q4] ;
       Q1234 = dcm2quat(Rori') ;
     end
@@ -404,7 +439,7 @@ classdef IRB2600Real
       Tcal = @ IRB2600Real.TransMatrixCalculation ;
       FT =  @ IRB2600Real.ForceTrance ;
       Tall = Tcal( JointP, transl(0,0,0)) ;       
-      Gg = 9.8 ;    % (unit : m/s^2£©;
+      Gg = 9.8 ;    % (unit : m/s^2ï¿½ï¿½;
       Force = zeros( 6, 6) ; 
       %%% Transport force from Link <End> to 6
       F_E6 = zeros(1,6) ;
